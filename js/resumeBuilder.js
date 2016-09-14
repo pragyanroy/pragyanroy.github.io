@@ -122,30 +122,39 @@ var work={
 
 var projects={
 
-	"project": [
-	{
-     "title":"Portfolio Page",
-     "dates":"2016",
-     "description":"Portfolio Page describes my web devlopment projects"
+	"projects": [
+	 {
+     "title":"Portfolio Webpage",
+     "dates":"2016 ",
+     "description":" -Used HTML and CSS skills to develop my webpage.This project helped me learn the basics of HTML,CSS and responsive design fundamentals",
+     "images":"images/portfolioimg.jpeg"
 	},
+		 {
+     "title":"Online Resume Webpage",
+     "dates":"2016 ",
+     "description":" -Used HTML/CSS and JavaScript skills to develop my webpage.This project helped me learn Java Script and Jquery fundamentals",
+     "images":"images/onlineresumeimg.png"
+	},
+
+	
     {
      "title":"Esurance IVR",
-     "dates":"2014-2016",
-     "description":"Please dial 800Esurance and hear the menu options developed by me",
-     "images":"https://www.google.com/search?q=ivr+images&espv=2&biw=1152&bih=652&tbm=isch&imgil=yTnY9qb7TQL7NM%253A%253BedlWMVz_8w6BGM%253Bhttp%25253A%25252F%25252Fwww.elisiontec.com%25252Fproduct%25252Fivr-system%25252F&source=iu&pf=m&fir=yTnY9qb7TQL7NM%253A%252CedlWMVz_8w6BGM%252C_&usg=__tlYv4KEpI20m4AzDqYuAeNx5NOY%3D&ved=0ahUKEwiowdb1rOrOAhVM7GMKHZkKBwUQyjcINQ&ei=fB7GV6iTOMzYjwOZlZwo#imgrc=yTnY9qb7TQL7NM%3A"
+     "dates":"2014-2016 ",
+     "description":"  -Responsible for designing,developing and maintaining IVR solutiosn in CVP call studio application and ICM call routing applications.",
+     "images":"images/cvpivr.jpg"
 	},
 	{
-     "title":"StaeFarm Bank IVR",
-     "dates":"2012-2014",
-     "description":"Team member for StateFarms's Natural Language IVR projectß",
-     "images":"https://www.google.com/search?q=ivr+images&espv=2&biw=1152&bih=652&tbm=isch&imgil=yTnY9qb7TQL7NM%253A%253BedlWMVz_8w6BGM%253Bhttp%25253A%25252F%25252Fwww.elisiontec.com%25252Fproduct%25252Fivr-system%25252F&source=iu&pf=m&fir=yTnY9qb7TQL7NM%253A%252CedlWMVz_8w6BGM%252C_&usg=__tlYv4KEpI20m4AzDqYuAeNx5NOY%3D&ved=0ahUKEwiowdb1rOrOAhVM7GMKHZkKBwUQyjcINQ&ei=fB7GV6iTOMzYjwOZlZwo#imgrc=yTnY9qb7TQL7NM%3A"
+     "title":"StateFarm Bank IVR",
+     "dates":"2012-2014 ",
+     "description":"  -Cisco UCCE Consultant for StateFarms's Natural Language IVR project which included Nuance,CVP and ICM call routing development.",
+     "images":"images/cvpivr1.jpg"
 	},
 	{
      "title":"Royal Bank of Scotland",
-     "dates":"2010-2012",
-     "description":"Team member for Royal Bank of Scotland's Network transformation project",
-     "images":"https://www.google.com/search?q=ivr+images&espv=2&biw=1152&bih=652&tbm=isch&imgil=yTnY9qb7TQL7NM%253A%253BedlWMVz_8w6BGM%253Bhttp%25253A%25252F%25252Fwww.elisiontec.com%25252Fproduct%25252Fivr-system%25252F&source=iu&pf=m&fir=yTnY9qb7TQL7NM%253A%252CedlWMVz_8w6BGM%252C_&usg=__tlYv4KEpI20m4AzDqYuAeNx5NOY%3D&ved=0ahUKEwiowdb1rOrOAhVM7GMKHZkKBwUQyjcINQ&ei=fB7GV6iTOMzYjwOZlZwo#imgrc=yTnY9qb7TQL7NM%3A"
-	},
+     "dates":"2010-2012 ",
+     "description":"  -Cisco ICM and CVP consultant for Royal Bank of Scotland's Network transformation project.",
+     "images":"images/icm.jpg"
+	}
 	]
 }
 
@@ -182,15 +191,23 @@ bio.display=function(){
   $('#topContacts').append(formattedGithub);
   $('#topContacts').append(formattedlocation);
 
-  var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
   $("#header").append(formattedbioPic);
 /*var formattedContacts = formattedEmail + formattedMobile;
   $("#header").append(formattedContacts);*/
     var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
    $("#header").append(formattedwelcomeMsg);
-   $("#header").append(HTMLskillsStart);
-	var formattedSkill=HTMLskills.replace("%data%",bio.skills[0]);
-	
+  
+
+	// append the 'HTMLskillStart' element
+$("#header").append(HTMLskillsStart);
+// For each skill in bio.skills
+for (var i = 0; i < bio.skills.length; i++) {
+  // create a new 'HTMLskills' element
+  var formattedSkill=HTMLskills.replace("%data%",bio.skills[i]);
+  // append formattedSkill to the '#skills' element
+  $("#skills").append(formattedSkill);
+	}
 
 }
 
@@ -220,7 +237,8 @@ for (job in work.jobs){
 
 
 
-projects.display=function(){
+function displayProjects()
+{
 
 	for(project in projects.projects)
 	{
@@ -230,50 +248,62 @@ projects.display=function(){
 		var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
 		$(".project-entry:last").append(formattedDates);
 
-		var formattedDescription=HTMLprojectDates.replace("%data%",project.projects[porject].description);
+		var formattedDescription=HTMLprojectDates.replace("%data%",projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 	    if(projects.projects[project].images.length>0)
 	    {
-	      for (image in project.projects[project].images)
-	      {
-	      var formattedImage=HTMLprojectImage.replace("%data%",project.projects[project].images[image]);
+	      var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[project].images);
 	      $(".project-entry:last").append(formattedImage);
-	      }
+	      
 	    }
 	}
 }
 
-
-/*function displayProjects()
+function displayeducation()
 {
 
-	for(project in projects.projects)
+	for (var i = 0; i < education.schools.length; i++) 
 	{
-		$("#projects").append(HTMLprojectStart);
-		var formattedTitle=HTMLprojectTitle.replace("%data%",project.projects[projects].title);
-		$(".project-entry:last").append(formattedTitle);
-		var formattedDates=HTMLprojectDates.replace("%data%",project.projects[projects].dates);
-		$(".project-entry:last").append(formattedDates);
+		$("#education").append(HTMLschoolStart);
+		var formattedschoolName=HTMLschoolName.replace("%data%",education.schools[i].name);
+		$(".education-entry:last").append(formattedschoolName);
+		var formattedschoolDates=HTMLschoolDates.replace("%data%",education.schools[i].dates);
+		$(".education-entry:last").append(formattedschoolDates);
 
-		var formattedDescription=HTMLprojectDates.replace("%data%",project.projects[description].dates);
-		$(".project-entry:last").append(formattedDescription);
-	    if(projects.projects[projects].images.length>0)
-	    {
-	      for (image in project.projects[projects].images)
-	      {
-	      var formattedImage=HTMLprojectImage.replace("%data%",project.projects[projects].images[image]);
-	      $(".project-entry:last").append(formattedImage);
-	      }
-	    }
-
-
+		var formattedHTMLschoolDegree=HTMLschoolDegree.replace("%data%",education.schools[i].degree);
+		$(".education-entry:last").append(formattedHTMLschoolDegree);
+		var formattedHTMLschoolMajor=HTMLschoolMajor.replace("%data%",education.schools[i].majors);
+		$(".education-entry:last").append(formattedHTMLschoolMajor);
+		var formattedTMLschoolLocation=HTMLschoolLocation.replace("%data%",education.schools[i].location);
+		$(".education-entry:last").append(formattedTMLschoolLocation);
+		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.schools[i].url);
+		$(".education-entry:last").append(formattedHTMLonlineURL);
 	}
-
-
-}*/
-
+}
+	function displayonline()
+	{
+		$(".education-entry:last").append(HTMLonlineClasses);
+		for (var i = 0; i < education.OnlineCourses.length; i++) 
+		{
+			
+		var formattedHTMLonlineTitle =HTMLonlineTitle .replace("%data%",education.OnlineCourses[i].title);
+		$(".education-entry:last").append(formattedHTMLonlineTitle);
+		var formattedschoolDates=HTMLonlineDates.replace("%data%",education.OnlineCourses[i].dates);
+		$(".education-entry:last").append(formattedschoolDates);
+		var formattedHTMLonlineSchool=HTMLonlineSchool.replace("%data%",education.OnlineCourses[i].school);
+		$(".education-entry:last").append(formattedHTMLonlineSchool);
+		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.OnlineCourses[i].url);
+		$(".education-entry:last").append(formattedHTMLonlineURL);
+	  
+	}
+}
+displayWork();
+bio.display();
+displayProjects();
+displayeducation();
+displayonline();
 $("#mapDiv").append(googleMap);
 /*displayBio();*/
-displayWork();
-bio.display()
-projects.display();
+
+
+/*projects.display();*/
