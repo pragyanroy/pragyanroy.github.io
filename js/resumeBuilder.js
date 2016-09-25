@@ -1,15 +1,15 @@
 var bio = { 
 	        "name": "Pragyan Roy",
-            "role": "CISCO UCCE/IVR/ICM and Web Developer",
+            "role": "CISCO UCCE-IVR and Call routing Engineer and Web Developer",
              "contacts" : {
              "mobile": "2036454699",
              "email": "roy.pragyan@gmail.com",
              "github": "pragyanroy",
              "location": "San Francisco"
          },
-         "welcomeMessage": " Welcome to Pragyan Roy's Resume",
-         "skills": ["CiscoIVR","Cisco ICM","HTML-CSS-JavaScript","Cisco-UCCE"],
-         "bioPic":"images/fry.jpg"
+         "welcomeMessage": "Contact Center transformation consultant in Cisco,AVAYA,Interactive Intelligence wih 12 years of experieance in US,UK,Japan and India",
+         "skills": ["CiscoIVR","Cisco CVP","Cisco ICM","HTML-CSS-JavaScript","Cisco-UCCE","Core Java"],
+         "biopic":"images/roypic.jpg"
 }
 
 var education={
@@ -32,7 +32,7 @@ var education={
 	
 	}
 	],
-    "OnlineCourses":[
+    "onlineCourses":[
     {
     	"title":"Web Development",
     	"school":"Udacity",
@@ -127,13 +127,13 @@ var projects={
      "title":"Portfolio Webpage",
      "dates":"2016 ",
      "description":" -Used HTML and CSS skills to develop my webpage.This project helped me learn the basics of HTML,CSS and responsive design fundamentals",
-     "images":"images/portfolioimg.jpeg"
+     "images":["images/portfolioimg.jpeg"]
 	},
 		 {
      "title":"Online Resume Webpage",
      "dates":"2016 ",
      "description":" -Used HTML/CSS and JavaScript skills to develop my webpage.This project helped me learn Java Script and Jquery fundamentals",
-     "images":"images/onlineresumeimg.png"
+     "images":["images/onlineresumeimg.png"]
 	},
 
 	
@@ -141,19 +141,19 @@ var projects={
      "title":"Esurance IVR",
      "dates":"2014-2016 ",
      "description":"  -Responsible for designing,developing and maintaining IVR solutiosn in CVP call studio application and ICM call routing applications.",
-     "images":"images/cvpivr.jpg"
+     "images":["images/cvpivr.jpg"]
 	},
 	{
      "title":"StateFarm Bank IVR",
      "dates":"2012-2014 ",
      "description":"  -Cisco UCCE Consultant for StateFarms's Natural Language IVR project which included Nuance,CVP and ICM call routing development.",
-     "images":"images/cvpivr1.jpg"
+     "images":["images/cvpivr1.jpg"]
 	},
 	{
      "title":"Royal Bank of Scotland",
      "dates":"2010-2012 ",
      "description":"  -Cisco ICM and CVP consultant for Royal Bank of Scotland's Network transformation project.",
-     "images":"images/icm.jpg"
+     "images":["images/icm.jpg"]
 	}
 	]
 }
@@ -186,12 +186,13 @@ bio.display=function(){
   var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
  var formattedlocation= HTMLlocation.replace("%data%", bio.contacts.location);
 
-  $('#topContacts').append(formattedMobile);
-  $('#topContacts').append(formattedEmail);
+  $('#topContacts').append(formattedMobile,formattedEmail,formattedGithub,formattedlocation);
+  /*$('#topContacts').append(formattedEmail);
   $('#topContacts').append(formattedGithub);
-  $('#topContacts').append(formattedlocation);
+  $('#topContacts').prepend(formattedlocation);*/
+  $('#footerContacts').append(formattedMobile,formattedEmail,formattedGithub,formattedlocation);
 
-  var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+  var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
   $("#header").append(formattedbioPic);
 /*var formattedContacts = formattedEmail + formattedMobile;
   $("#header").append(formattedContacts);*/
@@ -218,48 +219,60 @@ $(document).click(function(loc){
 	logClicks(x,y);
 });
 
-function displayWork(){
+work.display=function(){
 
 
 
-for (job in work.jobs){
+/*for (job in work.jobs)*/
+for ( i=0; i< work.jobs.length;i++)
+
+{
 	$("#workExperience").append(HTMLworkStart);
-	var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-	var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[job].title);
+	var formattedEmployer=HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+	var formattedTitle=HTMLworkTitle.replace("%data%",work.jobs[i].title);
 	var formattedEmployerTitle= formattedEmployer+formattedTitle;
 	$(".work-entry:last").append(formattedEmployerTitle);
-	var formattedDates=HTMLworkDates.replace("%data%",work.jobs[job].dates);
+	var formattedDates=HTMLworkDates.replace("%data%",work.jobs[i].dates);
 	$(".work-entry-last").append(formattedDates);
-	var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[job].description);
+	var formattedDescription=HTMLworkDescription.replace("%data%",work.jobs[i].description);
 	$(".work-entry:last").append(formattedDescription);
+		var formattedloc=HTMLworkLocation.replace("%data%",work.jobs[i].location);
+	$(".work-entry:last").append(formattedloc);
+
 }
 }
 
 
-
-function displayProjects()
+projects.display=function()
+/*function displayProjects()*/
 {
 
-	for(project in projects.projects)
+	for(i=0; i< projects.projects.length;i++)
 	{
 		$("#projects").append(HTMLprojectStart);
-		var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+		var formattedTitle=HTMLprojectTitle.replace("%data%",projects.projects[i].title);
 		$(".project-entry:last").append(formattedTitle);
-		var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+		var formattedDates=HTMLprojectDates.replace("%data%",projects.projects[i].dates);
 		$(".project-entry:last").append(formattedDates);
 
-		var formattedDescription=HTMLprojectDates.replace("%data%",projects.projects[project].description);
+		var formattedDescription=HTMLprojectDescription.replace("%data%",projects.projects[i].description);
 		$(".project-entry:last").append(formattedDescription);
-	    if(projects.projects[project].images.length>0)
+	    if(projects.projects[i].images.length>0)
 	    {
-	      var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[project].images);
+	      var formattedImage=HTMLprojectImage.replace("%data%",projects.projects[i].images);
 	      $(".project-entry:last").append(formattedImage);
-	      
 	    }
-	}
+	
+	  /*or(j=0;j<projects.images.length;j++)
+	  	
+	      {
+          var formattedImage=HTMLprojectImage.replace("%data%",projects.images[j]);
+	      $(".project-entry:last").append(formattedImage);
+	     }*/
 }
-
-function displayeducation()
+}
+education.display=function()
+/*function displayeducation()*/
 {
 
 	for (var i = 0; i < education.schools.length; i++) 
@@ -278,30 +291,45 @@ function displayeducation()
 		$(".education-entry:last").append(formattedTMLschoolLocation);
 		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.schools[i].url);
 		$(".education-entry:last").append(formattedHTMLonlineURL);
+
 	}
-}
-	function displayonline()
-	{
+/*--------------------------------------online COurses---------------------------*/
 		$(".education-entry:last").append(HTMLonlineClasses);
-		for (var i = 0; i < education.OnlineCourses.length; i++) 
+		for (var i = 0; i < education.onlineCourses.length; i++) 
 		{
 			
-		var formattedHTMLonlineTitle =HTMLonlineTitle .replace("%data%",education.OnlineCourses[i].title);
+		var formattedHTMLonlineTitle =HTMLonlineTitle .replace("%data%",education.onlineCourses[i].title);
 		$(".education-entry:last").append(formattedHTMLonlineTitle);
-		var formattedschoolDates=HTMLonlineDates.replace("%data%",education.OnlineCourses[i].dates);
+		var formattedschoolDates=HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
 		$(".education-entry:last").append(formattedschoolDates);
-		var formattedHTMLonlineSchool=HTMLonlineSchool.replace("%data%",education.OnlineCourses[i].school);
+		var formattedHTMLonlineSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
 		$(".education-entry:last").append(formattedHTMLonlineSchool);
-		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.OnlineCourses[i].url);
+		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.onlineCourses[i].url);
 		$(".education-entry:last").append(formattedHTMLonlineURL);
-	  
 	}
 }
-displayWork();
+	/*function displayonline()
+	{
+		$(".education-entry:last").append(HTMLonlineClasses);
+		for (var i = 0; i < education.onlineCourses.length; i++) 
+		{
+			
+		var formattedHTMLonlineTitle =HTMLonlineTitle .replace("%data%",education.onlineCourses[i].title);
+		$(".education-entry:last").append(formattedHTMLonlineTitle);
+		var formattedschoolDates=HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
+		$(".education-entry:last").append(formattedschoolDates);
+		var formattedHTMLonlineSchool=HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
+		$(".education-entry:last").append(formattedHTMLonlineSchool);
+		var formattedHTMLonlineURL=HTMLonlineURL.replace("%data%",education.onlineCourses[i].url);
+		$(".education-entry:last").append(formattedHTMLonlineURL);
+	  
+	}*/
+
+work.display();
 bio.display();
-displayProjects();
-displayeducation();
-displayonline();
+projects.display();
+education.display();
+/*displayonline();*/
 $("#mapDiv").append(googleMap);
 /*displayBio();*/
 

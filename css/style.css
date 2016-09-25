@@ -40,9 +40,9 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  font-style: bold;
   font-size: 20px;
-  color: #000;
+  color: #777;
   line-height: 22px;
 }
 
@@ -86,7 +86,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #c36c00;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -141,7 +141,9 @@ a {
   padding: 10px;
 }
 
-.flex-column {
+.flex-
+
+ {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -169,6 +171,7 @@ img {
 
 span {
   padding: 5px;
+  color:white;
 }
 
 #lets-connect {
