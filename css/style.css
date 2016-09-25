@@ -102,6 +102,7 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  
 }
 
 .orange {
@@ -156,6 +157,7 @@ a {
 
 ul {
   list-style-type: none;
+  float:left;
 }
 
 .biopic {
