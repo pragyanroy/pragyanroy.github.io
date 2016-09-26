@@ -40,9 +40,9 @@ h2 {
 }
 
 h3 {
-  font-style: bold;
+  font-style: italic;
   font-size: 20px;
-  color: #777;
+  color: #000;
   line-height: 22px;
 }
 
@@ -86,7 +86,7 @@ p {
 }
 
 a {
-  color: #c36c00;
+  color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -102,7 +102,6 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
-  
 }
 
 .orange {
@@ -142,9 +141,7 @@ a {
   padding: 10px;
 }
 
-.flex-
-
- {
+.flex-column {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -157,7 +154,6 @@ a {
 
 ul {
   list-style-type: none;
-  float:left;
 }
 
 .biopic {
