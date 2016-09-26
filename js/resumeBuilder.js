@@ -243,9 +243,9 @@ projects.display = function()
             $(".project-entry:last").append(formattedDescription);
 
              for (x=0;x<projects.projects[i].images.length;x++) 
-             {
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images);
-                $(".project-entry:last").append(formattedImage);
+                          {
+                             var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[x]);
+                             $(".project-entry:last").append(formattedImage);
             }
             /*if (projects.projects[i].images.length > 0) {
                 var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images);
