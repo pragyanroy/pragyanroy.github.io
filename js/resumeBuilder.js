@@ -38,12 +38,12 @@ var education = {
             "title": "CVP Training",
             "school": "Sunset learning",
             "dates": "2016",
-            "url": "https://udacity.com"
+            "url": "https://www.sunsetlearning.com/course-catalog/cisco-cvp-developer-training-cvpd"
         }, {
             "title": "CCNA Voice",
             "school": "Unitek Education",
             "dates": "2016",
-            "url": "https://udacity.com"
+            "url": "http://www.unitek.com/training/cisco/ccna-collaboration.php"
         }
 
 
