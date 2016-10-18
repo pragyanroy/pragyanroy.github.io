@@ -124,7 +124,7 @@ var projects = {
             "title": "Esurance IVR",
             "dates": "2014-2016 ",
             "description": "  -Responsible for designing,developing and maintaining IVR solutiosn in CVP call studio application and ICM call routing applications.",
-            "images": ["images/cvpivr.jpg"]
+            "images": ["images/cvpivr1.jpg"]
         }, {
             "title": "StateFarm Bank IVR",
             "dates": "2012-2014 ",
