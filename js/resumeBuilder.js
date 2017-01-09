@@ -123,8 +123,8 @@ var projects = {
         {
             "title": "Cisco voice portal (CVP) and Cisco ICM Deployment",
             "dates": "2014-2016 ",
-            "description": "  -Responsible for migrating legacy CISCO IVR to Cisco CVP solutions. Managed Development and delivery of IVR/ICM solutions in CVP call studio and ICM",
-            "images": ["images/cvpivr1.jpg"]
+            "description": "  -Responsible for Development and Migration of legacy CISCO IVR to Cisco CVP solutions.",
+            "images": ["images/cvpivr.jpg"]
         }, {
             "title": "Natural Language IVR and Cisco ICM ",
             "dates": "2012-2014 ",
