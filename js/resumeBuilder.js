@@ -1,6 +1,6 @@
 var bio = {
     "name": "Pragyan Roy",
-    "role": "CISCO UCCE-IVR and Call routing Engineer and Web Developer",
+    "role": "CISCO UCCE-IVR and Call Routing Engineer and Front End Web Developer",
     "contacts": {
         "mobile": "2036454699",
         "email": "roy.pragyan@gmail.com",
@@ -64,13 +64,13 @@ var work = {
         "title": "Consultant Service Transformation",
         "dates": "Sep 2010 -April 2012",
         "location": "London,UK",
-        "description": "Responsible for migrating legacy IVR's and contact center of fortune 500 clients(RoyalBankofScotland) to state of art SIP based contact centers."
+        "description": "Responsible for migrating legacy IVR's and contact center for large Banks to state of art SIP enabled CISCO contact centers."
     }, {
         "employer": "Accenture USA",
         "title": "Consultant Service Transformation",
         "dates": "Sep 2012 -April 2014",
         "location": "Bloomington,IL",
-        "description": "Responsible for migrating legacy IVR's and contact center of fortune 500 clients(StateFarm) to state of art SIP based contact centers."
+        "description": "Responsible for migrating legacy IVR's and contact center for large insurance company to state of art SIP based contact centers."
     }, {
         "employer": "TATA Communications",
         "title": "Assitant Manager Network Voice",
@@ -89,13 +89,13 @@ var work = {
         "title": "Senior Customer Interaction Center Engineer",
         "dates": "Oct 2006 -Oct 2008",
         "location": "Tokyo,Japan",
-        "description": "Responsible for Development of IVR and call Routing for Shinsei Bank Call centersin Tokyo.Responsible for planning ,designing and implementing SIP based Interative intelligence contact center"
+        "description": "Responsible for Development of IVR and call Routing for Shinsei Bank Call centers in Tokyo.Responsible for planning ,designing and implementing SIP based Interative intelligence contact center"
     }, {
         "employer": "Servion Global Solutions",
         "title": "Software Engineer",
         "dates": "June 2005 -Oct 2006",
         "location": "Chennai, India",
-        "description": "Responsible for Development of IVR and Routing for Banking and Insurance clients"
+        "description": "Responsible for Development of Dialer, IVR and Routing for Banking and Insurance clients"
     }, {
         "employer": "ABN Amro Bank",
         "title": "Investment Banking officer",
@@ -115,23 +115,23 @@ var projects = {
         }, {
             "title": "Online Resume Webpage",
             "dates": "2016 ",
-            "description": " -Used HTML/CSS and JavaScript skills to develop my webpage.This project helped me learn Java Script and Jquery fundamentals",
+            "description": " -Used HTML/CSS and JavaScript/jquery and AJAX skills to develop my webpage.This project helped me learn Java Script and Jquery fundamentals",
             "images": ["images/onlineresumeimg.png"]
         },
 
 
         {
-            "title": "Esurance IVR",
+            "title": "Cisco voice portal (CVP) and Cisco ICM Deployment",
             "dates": "2014-2016 ",
-            "description": "  -Responsible for designing,developing and maintaining IVR solutiosn in CVP call studio application and ICM call routing applications.",
-            "images": ["images/cvpivr1.jpg"]
+            "description": "  -Responsible for migrating legacy CISCO IVR to Cisco CVP solutions. Managed Development and delivery of IVR/ICM solutions in CVP call studio and ICM",
+            "images": ["images/cvpivr.jpg"]
         }, {
-            "title": "StateFarm Bank IVR",
+            "title": "Natural Language IVR and Cisco ICM ",
             "dates": "2012-2014 ",
-            "description": "  -Cisco UCCE Consultant for StateFarms's Natural Language IVR project which included Nuance,CVP and ICM call routing development.",
+            "description": "  - Solution Consultant for Natural Language IVR project which included Nuance,CVP and ICM call routing development.",
             "images": ["images/cvpivr1.jpg"]
         }, {
-            "title": "Royal Bank of Scotland",
+            "title": "Cisco voice portal (CVP) and Cisco ICM Deployment",
             "dates": "2010-2012 ",
             "description": "  -Cisco ICM and CVP consultant for Royal Bank of Scotland's Network transformation project.",
             "images": ["images/icm.jpg"]
