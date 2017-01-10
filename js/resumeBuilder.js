@@ -26,7 +26,7 @@ var education = {
         "degree": "High School Diploma",
         "majors": ["Science"],
         "dates": "2000",
-        "url": "http://www.cisce.org/"
+        "url": "http://www.cisco.org/"
 
     }],
     "onlineCourses": [{
